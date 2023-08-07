@@ -12,7 +12,7 @@ body {
     display: grid;
     height: 600px;
     width: 600px;
-    margin-top: 10px;
+    margin: 10px 0px 15px 0px;
     box-shadow: black 0px 3px 8px;
     background-color: white;
 }
@@ -20,11 +20,9 @@ body {
 .grid-box {
     display: flex;
     /* ugly ass green to show the boxes were created! */
-    /* background-color: green; */
     transition-duration: 0.07s;
 }
 
 .grid-box:hover {
     background-color: red;
-
 }

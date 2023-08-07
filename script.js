@@ -1,11 +1,11 @@
 var defaultSize = 16;
 const gridContainer = document.getElementById("grid-container");
 
-function createGrid() {
-    gridContainer.style.gridTemplateColumns = `repeat(${defaultSize}, 1fr)`;
-    gridContainer.style.gridTemplateRows = `repeat(${defaultSize}, 1fr)`;
+function createGrid(size) {
+    gridContainer.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+    gridContainer.style.gridTemplateRows = `repeat(${size}, 1fr)`;
 
-    for (let i = 0; i <= defaultSize * defaultSize; i++) {
+    for (let i = 0; i < size * size; i++) {
         gridBox = document.createElement("div");
         gridBox.classList.add('grid-box');
         gridContainer.appendChild(gridBox);
@@ -17,9 +17,11 @@ function changeGridSize() {
     if (isNaN(gridSizeInput)) {
         alert("Please enter a reasonable number!")
     } else {
-        defaultSize = gridSizeInput;
-        createGrid();
+        newSize = gridSizeInput;
+        createGrid(newSize);
     }
 }
 
-createGrid();
+window.onload = () => {
+    createGrid(defaultSize);
+}
